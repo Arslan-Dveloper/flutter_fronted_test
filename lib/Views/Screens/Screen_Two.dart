@@ -2,6 +2,8 @@ import 'package:flutter/material.dart';
 import 'package:flutter_fronted_test/Custom_Widget/My_Custom_Widget.dart';
 import 'package:flutter_fronted_test/Extentions/Padding_Extention.dart';
 import 'package:flutter_fronted_test/Helpers/constants.dart';
+import 'package:flutter_fronted_test/Views/Screens/Screen_Three.dart';
+import 'package:get/get.dart';
 import 'package:sizer/sizer.dart';
 
 class ScreenTwo extends StatelessWidget {
@@ -284,7 +286,25 @@ class ScreenTwo extends StatelessWidget {
                   ],
                 ).onlyPadding(left: 28.w),
               ],
-            ).onlyPadding(top: 2.h)
+
+            ).onlyPadding(top: 2.h),
+            GestureDetector(
+              onTap: () {
+                Get.to(ScreenThree());
+              },
+              child: MyContainer(
+                width: 70.sp,
+                height: 50,
+                colorContainer: AppColor.blackColor,
+                borderRadius: BorderRadius.circular(10.sp),
+                widgetContainer: MyText(
+                  text: 'Press',
+                  textColor: AppColor.whiteColor,
+                  textAlignText: TextAlign.center,
+                  fontSize: 16.sp,
+                ).onlyPadding(top: 7.sp),
+              ).onlyPadding(left: 140, top: 50),
+            )
           ],
         ).symmetricPadding(horizontal: 5.w),
       ),
